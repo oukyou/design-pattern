@@ -4,12 +4,12 @@
  * @author Oukyou
  * @version New 2018年3月7日
  */
-package com.oukyou.factory.service;
+package com.oukyou.pattern.factory.service;
 
 /**
  * 鞋子配送接口
  */
-public interface ShoesDelivery {
+public interface ShoesDeliveryService {
 
 	/**
 	 * 配送

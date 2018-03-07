@@ -4,16 +4,16 @@
  * @author Oukyou
  * @version New 2018年3月7日
  */
-package com.oukyou.factory.service;
+package com.oukyou.pattern.factory.service;
 
-import com.oukyou.factory.domain.Ems;
-import com.oukyou.factory.domain.Sal;
-import com.oukyou.factory.domain.Ship;
+import com.oukyou.pattern.factory.domain.Ems;
+import com.oukyou.pattern.factory.domain.Sal;
+import com.oukyou.pattern.factory.domain.Ship;
 
 /**
  * 鞋子配送接口实现
  */
-public class ShoesDeliveryImpl implements ShoesDelivery {
+public class ShoesDeliveryServiceImpl implements ShoesDeliveryService {
 
 	/**
 	 * 配送

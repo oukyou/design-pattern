@@ -4,7 +4,7 @@
  * @author Oukyou
  * @version New 2018年3月7日
  */
-package com.oukyou.factory;
+package com.oukyou.pattern.factory.factory;
 
 /**
  * 工厂生成器

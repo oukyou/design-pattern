@@ -4,16 +4,16 @@
  * @author Oukyou
  * @version New 2018年3月7日
  */
-package com.oukyou.factory.service;
+package com.oukyou.pattern.factory.service;
 
-import com.oukyou.factory.domain.Adidas;
-import com.oukyou.factory.domain.Jordon;
-import com.oukyou.factory.domain.Nike;
+import com.oukyou.pattern.factory.domain.Adidas;
+import com.oukyou.pattern.factory.domain.Jordon;
+import com.oukyou.pattern.factory.domain.Nike;
 
 /**
  * 鞋子生产接口实现
  */
-public final class ShoesProduceImpl implements ShoesProduce {
+public final class ShoesProduceServiceImpl implements ShoesProduceService {
 
 	/**
 	 * 鞋子生产

@@ -4,7 +4,7 @@
  * @author Oukyou
  * @version New 2018年3月7日
  */
-package com.oukyou.factory.service;
+package com.oukyou.pattern.factory.service;
 
 /**
  * 鞋子服务工厂
@@ -23,8 +23,8 @@ public final class ShoesServiceFactory {
 	 * 
 	 * @return 鞋子生产接口
 	 */
-	public static ShoesProduce createShoesProduce() {
-		return new ShoesProduceImpl();
+	public static ShoesProduceService createShoesProduceService() {
+		return new ShoesProduceServiceImpl();
 	}
 
 	/**
@@ -32,7 +32,7 @@ public final class ShoesServiceFactory {
 	 * 
 	 * @return 鞋子配送接口
 	 */
-	public static ShoesDelivery createShoesDelivery() {
-		return new ShoesDeliveryImpl();
+	public static ShoesDeliveryService createShoesDeliveryService() {
+		return new ShoesDeliveryServiceImpl();
 	}
 }

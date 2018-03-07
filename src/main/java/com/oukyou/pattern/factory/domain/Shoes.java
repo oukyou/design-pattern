@@ -4,7 +4,7 @@
  * @author Oukyou
  * @version New 2018年3月7日
  */
-package com.oukyou.factory.domain;
+package com.oukyou.pattern.factory.domain;
 
 /**
  * 鞋子

@@ -4,21 +4,21 @@
  * @author Oukyou
  * @version New 2018年3月7日
  */
-package com.oukyou.factory.domain;
+package com.oukyou.pattern.factory.domain;
 
 /**
- * EMS
+ * 船运
  */
-public final class Ems extends ExpressDelivery {
+public final class Ship extends ExpressDelivery {
 
 	/**
 	 * 构造函数
 	 * 
 	 * @param shoesName 鞋子品牌
 	 */
-	public Ems(String shoesName) {
+	public Ship(String shoesName) {
 		this.shoesName = shoesName;
-		this.name = "EMS";
+		this.name = "船运";
 	}
 
 	/**
@@ -26,6 +26,6 @@ public final class Ems extends ExpressDelivery {
 	 */
 	@Override
 	public void getDeliveryStatus() {
-		System.out.println("当前配送的" + shoesName + "牌鞋子即将到达。");
+		System.out.println("当前配送的" + shoesName + "牌鞋子快递还在海上，请耐心等候。");
 	}
 }
