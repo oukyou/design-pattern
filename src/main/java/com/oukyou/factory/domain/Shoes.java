@@ -9,7 +9,7 @@ package com.oukyou.factory.domain;
 /**
  * 鞋子
  */
-public abstract class Shoes {
+public class Shoes {
 
 	/**
 	 * 品牌名
@@ -81,9 +81,10 @@ public abstract class Shoes {
 	}
 
 	/**
-	 * 获取生产进度
-	 * 
-	 * @return 生产进度
+	 * 接受订单
 	 */
-	public abstract String getProduceStatus();
+	public void accept() {
+		System.out.println("已接受生产" + count + "双" + color + "色，"
+				+ String.valueOf(size) + "码，" + name + "牌鞋子的订单。");
+	}
 }

@@ -21,15 +21,5 @@ public final class Nike extends Shoes {
 	public Nike(String color, Double size, int count) {
 		super(color, size, count);
 		this.name = "Nike";
-		System.out.println("订单创建完成@" + name);
-	}
-
-	/**
-	 * @see Shoes#getProduceStatus()
-	 */
-	@Override
-	public String getProduceStatus() {
-		return "已接受生产" + count + "双" + color + "色，" + String.valueOf(size)
-				+ "码，" + name + "牌鞋子的订单。";
 	}
 }

@@ -21,15 +21,5 @@ public final class Adidas extends Shoes {
 	public Adidas(String color, Double size, int count) {
 		super(color, size, count);
 		this.name = "Adidas";
-		System.out.println("订单创建完成@" + name);
-	}
-
-	/**
-	 * @see Shoes#getProduceStatus()
-	 */
-	@Override
-	public String getProduceStatus() {
-		return "已经生产了" + (count - 120) + "双" + color + "色，"
-				+ String.valueOf(size) + "码, " + name + "牌鞋子了。";
 	}
 }

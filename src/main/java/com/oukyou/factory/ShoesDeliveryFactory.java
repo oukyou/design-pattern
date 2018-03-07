@@ -11,24 +11,24 @@ import com.oukyou.factory.service.ShoesProduce;
 import com.oukyou.factory.service.ShoesServiceFactory;
 
 /**
- * 鞋子生产工厂
+ * 鞋子配送工厂
  */
-public final class ShoesProduceFactory extends AbstractShoesFactory {
+public class ShoesDeliveryFactory extends AbstractShoesFactory {
 
 	/**
 	 * @see AbstractShoesFactory#getShoesProduce()
 	 */
 	@Override
 	public ShoesProduce getShoesProduce() {
-		return ShoesServiceFactory.createShoesProduce();
+		return null;
 	}
 
 	/**
-	 * @see AbstractShoesFactory#getShoesDevliery()
+	 * @see AbstractShoesFactory#getShoesProduce()
 	 */
 	@Override
 	public ShoesDelivery getShoesDevliery() {
-		return null;
+		return ShoesServiceFactory.createShoesDelivery();
 	}
 
 }

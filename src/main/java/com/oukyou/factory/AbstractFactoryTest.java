@@ -6,7 +6,8 @@
  */
 package com.oukyou.factory;
 
-import com.oukyou.factory.domain.Shoes;
+import com.oukyou.factory.service.ShoesDelivery;
+import com.oukyou.factory.service.ShoesProduce;
 
 /**
  * 抽象工厂测试
@@ -20,18 +21,32 @@ public class AbstractFactoryTest {
 	 * @throws InterruptedException 线程中断例外
 	 */
 	public static void main(String[] args) throws InterruptedException {
-		// 获取鞋子抽象工厂
-		AbstractShoesFactory factory = FactoryProducter.getFactory();
-		// 生产不同品牌的鞋子
-		Shoes nike = factory.produceNike("GREEN", 41D, 100);
-		Shoes adidas = factory.produceAdidas("BLUE", 42D, 200);
-		Shoes jordon = factory.produceJordon("WHITE", 43D, 300);
+		// 获取鞋子生产工厂
+		AbstractShoesFactory proFac = FactoryProducter.getFactory("produce");
+		ShoesProduce shoesProduce = proFac.getShoesProduce();
+		// 生产存在品牌鞋子
+		shoesProduce.produce("Nike", "Red", 41D, 100);
+		shoesProduce.produce("Adidas", "Blue", 42D, 200);
+		shoesProduce.produce("Jordon", "White", 43D, 300);
+		// 生产不存在品牌鞋子
+		shoesProduce.produce("LiNing", "Green", 43D, 300);
 
-		Thread.sleep(1000);
+		// 获取鞋子生产工厂
+		AbstractShoesFactory delFac = FactoryProducter.getFactory("delivery");
+		ShoesDelivery shoesDelivery = delFac.getShoesDevliery();
+		// 使用已知快递配送鞋子
+		shoesDelivery.delivery("Nike", "ems");
+		shoesDelivery.delivery("Adidas", "sal");
+		shoesDelivery.delivery("Jordon", "ship");
+		// 使用未知快递配送鞋子
+		shoesDelivery.delivery("Nike", "DHL");
 
-		// 查询生产进度
-		System.out.println(nike.getProduceStatus());
-		System.out.println(adidas.getProduceStatus());
-		System.out.println(jordon.getProduceStatus());
+		// 查询已知快递配送状态
+		shoesDelivery.getDeliveryStatus("Adidas", "ems");
+		shoesDelivery.getDeliveryStatus("Jordon", "sal");
+		shoesDelivery.getDeliveryStatus("Nike", "ship");
+		// 查询未知快递配送状态
+		shoesDelivery.getDeliveryStatus("Nike", "SF");
+
 	}
 }
