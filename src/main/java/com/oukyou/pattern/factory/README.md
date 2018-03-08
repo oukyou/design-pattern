@@ -8,4 +8,4 @@
 
 ### 类图
 
-	![类图](class.jpg)
+![类图](class.png)
