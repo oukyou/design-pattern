@@ -13,7 +13,7 @@ import com.oukyou.pattern.factory.service.ShoesServiceFactory;
 /**
  * 鞋子配送工厂
  */
-public class ShoesDeliveryFactory extends AbstractShoesFactory {
+public final class ShoesDeliveryFactory extends AbstractShoesFactory {
 
 	/**
 	 * @see AbstractShoesFactory#getShoesProduceService()
