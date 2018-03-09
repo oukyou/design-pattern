@@ -13,7 +13,7 @@ import com.oukyou.pattern.factory.domain.Ship;
 /**
  * 鞋子配送接口实现
  */
-public class ShoesDeliveryServiceImpl implements ShoesDeliveryService {
+public final class ShoesDeliveryServiceImpl implements ShoesDeliveryService {
 
 	/**
 	 * 配送

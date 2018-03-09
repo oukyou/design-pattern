@@ -12,10 +12,22 @@ package com.oukyou.pattern.singleton.inner;
 public final class StaticInnerSingleton {
 
 	/**
+	 * 实例化标志
+	 */
+	private boolean initialized = false;
+	
+	/**
 	 * 构造方法
 	 */
 	private StaticInnerSingleton() {
-		// 什么都不做
+		synchronized (StaticInnerSingleton.class){
+            if(initialized == false){
+                initialized = !initialized;
+            }else{
+                throw new RuntimeException("不可多重实例化。");
+            }
+        }
+
 	}
 
 	/**
@@ -31,5 +43,4 @@ public final class StaticInnerSingleton {
 	private static class SingletonHolder {
 		public static final StaticInnerSingleton INSTANCE = new StaticInnerSingleton();
 	}
-
 }

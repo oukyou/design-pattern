@@ -6,10 +6,9 @@
  */
 package com.oukyou.pattern.singleton;
 
-import com.oukyou.pattern.singleton.enums.EnumInterfaceSigleton;
-import com.oukyou.pattern.singleton.enums.EnumInterfaceSigletonImpl;
 import com.oukyou.pattern.singleton.enums.EnumSingleton;
 import com.oukyou.pattern.singleton.inner.StaticInnerSingleton;
+import com.oukyou.pattern.singleton.register.RegisterSingleton;
 import com.oukyou.pattern.singleton.simple.HungrySingleton;
 import com.oukyou.pattern.singleton.simple.LazySingletonThreadSafe;
 import com.oukyou.pattern.singleton.simple.LazySingletonUnThreadSafe;
@@ -62,7 +61,7 @@ public class SingletonTest {
 		System.out.println("----------------华丽的分割线----------------");
 
 		for (int i = 0; i < 10; i++) {
-			createEnumInterfaceSigletonThread();
+			createRegisterSingletonThread();
 		}
 	}
 
@@ -121,7 +120,7 @@ public class SingletonTest {
 	private static void createEnumSingletonThread() {
 		new Thread() {
 			public void run() {
-				System.out.println(EnumSingleton.INSTANCE);
+				System.out.println(EnumSingleton.ADMIN);
 				try {
 					Thread.sleep(500);
 				} catch (InterruptedException e) {
@@ -131,11 +130,10 @@ public class SingletonTest {
 		}.start();
 	}
 
-	private static void createEnumInterfaceSigletonThread() {
+	private static void createRegisterSingletonThread() {
 		new Thread() {
 			public void run() {
-				EnumInterfaceSigleton singleton = EnumInterfaceSigletonImpl.getInstance();
-				singleton.realized();
+				System.out.println(RegisterSingleton.getInstance(null));
 				try {
 					Thread.sleep(500);
 				} catch (InterruptedException e) {
