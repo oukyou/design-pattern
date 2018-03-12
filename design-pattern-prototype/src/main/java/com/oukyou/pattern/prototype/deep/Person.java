@@ -31,7 +31,7 @@ public class Person {
 	/**
 	 * 设置姓名
 	 * 
-	 * @param weight 姓名
+	 * @param name 姓名
 	 */
 	public void setName(String name) {
 		this.name = name;

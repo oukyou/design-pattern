@@ -29,6 +29,9 @@ public final class Oukyou extends Person implements Serializable, Cloneable {
 	 */
 	private List<Computer> computerList;
 
+	/**
+	 * 构造方法
+	 */
 	public Oukyou() {
 		computerList = new ArrayList<Computer>();
 		Computer note = new Computer();

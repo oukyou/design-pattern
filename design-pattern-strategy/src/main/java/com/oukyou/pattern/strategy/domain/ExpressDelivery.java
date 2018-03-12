@@ -13,6 +13,8 @@ public interface ExpressDelivery {
 
 	/**
 	 * 配送
+	 * 
+	 * @return 配送结果
 	 */
 	public String delivery();
 }

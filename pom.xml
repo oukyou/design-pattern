@@ -18,7 +18,6 @@
 	</build>
   <modules>
   	<module>design-pattern-factory</module>
-  	<module>aaaaa</module>
   	<module>design-pattern-singleton</module>
   	<module>design-pattern-prototype</module>
   	<module>design-pattern-proxy</module>
