@@ -2,6 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oukyou</groupId>
   <artifactId>design-pattern</artifactId>
+  <packaging>pom</packaging>
   <version>0.0.1-SNAPSHOT</version>
   
   <build>
@@ -15,4 +16,13 @@
 	    </plugin>
 	  </plugins>
 	</build>
+  <modules>
+  	<module>design-pattern-factory</module>
+  	<module>aaaaa</module>
+  	<module>design-pattern-singleton</module>
+  	<module>design-pattern-prototype</module>
+  	<module>design-pattern-proxy</module>
+  	<module>design-pattern-strategy</module>
+  	<module>design-pattern-template</module>
+  </modules>
 </project>
