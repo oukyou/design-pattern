@@ -9,7 +9,7 @@ package com.oukyou.pattern.strategy.domain;
 /**
  * Sal
  */
-public class Sal implements ExpressDelivery {
+public final class Sal implements ExpressDelivery {
 
 	/**
 	 * @see ExpressDelivery#delivery()

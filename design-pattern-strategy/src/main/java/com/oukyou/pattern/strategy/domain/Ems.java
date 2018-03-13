@@ -9,7 +9,7 @@ package com.oukyou.pattern.strategy.domain;
 /**
  * Ems
  */
-public class Ems implements ExpressDelivery {
+public final class Ems implements ExpressDelivery {
 
 	/**
 	 * @see ExpressDelivery#delivery()

@@ -9,7 +9,7 @@ package com.oukyou.pattern.strategy.domain;
 /**
  * 海运
  */
-public class Ship  implements ExpressDelivery {
+public final class Ship implements ExpressDelivery {
 
 	/**
 	 * @see ExpressDelivery#delivery()

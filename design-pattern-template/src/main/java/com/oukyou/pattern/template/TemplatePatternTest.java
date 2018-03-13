@@ -6,11 +6,12 @@
  */
 package com.oukyou.pattern.template;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.InputStream;
 
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.poifs.filesystem.POIFSFileSystem;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
  * 模版类型测试
@@ -26,20 +27,18 @@ public final class TemplatePatternTest {
 	public static void main(String[] args) throws Exception {
 		// 读取详细excel表的内容
 		InputStream detailStream = new FileInputStream("detail.xlsx");
-		POIFSFileSystem detailFs = new POIFSFileSystem(detailStream);
-		HSSFWorkbook detailWb = new HSSFWorkbook(detailFs);
+		XSSFWorkbook detailWb = new XSSFWorkbook(detailStream);
 
 		DetailWorkbook detail = new DetailWorkbook(detailWb);
-		detail.write();
+		detail.write(new FileOutputStream(new File("detail-output.xlsx")));
 		detailStream.close();
 
 		// 读取详细excel表的内容
 		InputStream totlaStream = new FileInputStream("total.xlsx");
-		POIFSFileSystem totalFs = new POIFSFileSystem(totlaStream);
-		HSSFWorkbook totalWb = new HSSFWorkbook(totalFs);
+		XSSFWorkbook totalWb = new XSSFWorkbook(totlaStream);
 
 		TotalWorkbook total = new TotalWorkbook(totalWb);
-		total.write();
+		total.write(new FileOutputStream(new File("total-output.xlsx")));
 		totlaStream.close();
 	}
 }

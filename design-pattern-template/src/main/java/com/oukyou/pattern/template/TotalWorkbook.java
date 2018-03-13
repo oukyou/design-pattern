@@ -7,11 +7,12 @@
 package com.oukyou.pattern.template;
 
 import java.io.IOException;
+import java.io.OutputStream;
 
-import org.apache.poi.hssf.usermodel.HSSFCell;
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
  * 详细表
@@ -23,7 +24,7 @@ public final class TotalWorkbook extends WorkbookTemplate {
 	 * 
 	 * @param workbook 工作薄
 	 */
-	public TotalWorkbook(HSSFWorkbook workbook) {
+	public TotalWorkbook(XSSFWorkbook workbook) {
 		super(workbook);
 	}
 
@@ -31,14 +32,14 @@ public final class TotalWorkbook extends WorkbookTemplate {
 	 * @see WorkbookTemplate#write()
 	 */
 	@Override
-	public void write() throws IOException {
+	public void write(OutputStream ops) throws IOException {
 		// 获取第一个sheet
-		HSSFSheet sheet = workbook.getSheetAt(0);
-		HSSFRow row = sheet.getRow(0);
-		HSSFCell cell = row.getCell(0);
+		XSSFSheet sheet = workbook.getSheetAt(0);
+		XSSFRow row = sheet.getRow(0);
+		XSSFCell cell = row.getCell(0);
 		cell.setCellValue("我是汇总表头。");
 
-		workbook.write();
+		workbook.write(ops);
 		System.out.println("汇总表出力完成。");
 	}
 
