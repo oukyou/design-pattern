@@ -20,20 +20,20 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public final class DetailWorkbook extends WorkbookTemplate {
 
 	/**
-	 * 构造方法
+	 * 构造函数
 	 * 
 	 * @param workbook 工作薄
+	 * @param ops 出力流
 	 */
-	public DetailWorkbook(XSSFWorkbook workbook) {
-		super(workbook);
+	public DetailWorkbook(XSSFWorkbook workbook, OutputStream ops) {
+		super(workbook, ops);
 	}
 
 	/**
-	 * @throws IOException
-	 * @see WorkbookTemplate#write()
+	 * @see WorkbookTemplate#writeSheet()
 	 */
 	@Override
-	public void write(OutputStream ops) throws IOException {
+	void writeSheet() throws IOException {
 		// 获取第一个sheet
 		XSSFSheet sheet = workbook.getSheetAt(0);
 		XSSFRow row = sheet.getRow(0);
@@ -43,5 +43,4 @@ public final class DetailWorkbook extends WorkbookTemplate {
 		workbook.write(ops);
 		System.out.println("详细表出力完成。");
 	}
-
 }

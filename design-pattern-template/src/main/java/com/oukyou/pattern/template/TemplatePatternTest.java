@@ -29,16 +29,16 @@ public final class TemplatePatternTest {
 		InputStream detailStream = new FileInputStream("detail.xlsx");
 		XSSFWorkbook detailWb = new XSSFWorkbook(detailStream);
 
-		DetailWorkbook detail = new DetailWorkbook(detailWb);
-		detail.write(new FileOutputStream(new File("detail-output.xlsx")));
+		DetailWorkbook detail = new DetailWorkbook(detailWb, new FileOutputStream(new File("detail-output.xlsx")));
+		detail.write();
 		detailStream.close();
 
 		// 读取详细excel表的内容
 		InputStream totlaStream = new FileInputStream("total.xlsx");
 		XSSFWorkbook totalWb = new XSSFWorkbook(totlaStream);
 
-		TotalWorkbook total = new TotalWorkbook(totalWb);
-		total.write(new FileOutputStream(new File("total-output.xlsx")));
+		TotalWorkbook total = new TotalWorkbook(totalWb, new FileOutputStream(new File("total-output.xlsx")));
+		total.write();
 		totlaStream.close();
 	}
 }

@@ -20,14 +20,20 @@ public abstract class WorkbookTemplate {
 	 * 工作薄
 	 */
 	XSSFWorkbook workbook;
+	/**
+	 * 出力流
+	 */
+	OutputStream ops;
 
 	/**
 	 * 构造函数
 	 * 
 	 * @param workbook 工作薄
+	 * @param ops 出力流
 	 */
-	public WorkbookTemplate(XSSFWorkbook workbook) {
+	public WorkbookTemplate(XSSFWorkbook workbook, OutputStream ops) {
 		this.workbook = workbook;
+		this.ops = ops;
 	}
 
 	/**
@@ -36,5 +42,27 @@ public abstract class WorkbookTemplate {
 	 * @param ops 出力流
 	 * @throws IOException IO例外
 	 */
-	public abstract void write(OutputStream ops) throws IOException;
+	public void write() throws IOException {
+		// sheet内容出力
+		writeSheet();
+		closeOps();
+	}
+
+	/**
+	 * 关闭出力流
+	 * 
+	 * @throws IOException IO例外
+	 */
+	private void closeOps() throws IOException {
+		if (ops != null) {
+			ops.close();
+		}
+	}
+
+	/**
+	 * 表格内容出力
+	 * 
+	 * @throws IOException IO例外
+	 */
+	abstract void writeSheet() throws IOException;
 }

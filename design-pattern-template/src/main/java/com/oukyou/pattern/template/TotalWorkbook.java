@@ -20,19 +20,20 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public final class TotalWorkbook extends WorkbookTemplate {
 
 	/**
-	 * 构造方法
+	 * 构造函数
 	 * 
 	 * @param workbook 工作薄
+	 * @param ops 出力流
 	 */
-	public TotalWorkbook(XSSFWorkbook workbook) {
-		super(workbook);
+	public TotalWorkbook(XSSFWorkbook workbook, OutputStream ops) {
+		super(workbook, ops);
 	}
 
 	/**
-	 * @see WorkbookTemplate#write()
+	 * @see WorkbookTemplate#writeSheet()
 	 */
 	@Override
-	public void write(OutputStream ops) throws IOException {
+	void writeSheet() throws IOException {
 		// 获取第一个sheet
 		XSSFSheet sheet = workbook.getSheetAt(0);
 		XSSFRow row = sheet.getRow(0);
