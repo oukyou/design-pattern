@@ -9,14 +9,13 @@ package com.oukyou.pattern.proxy.staticed;
 /**
  * Oubb
  */
-public final class Oubb implements Buyer {
+public class Oubb implements Buyer {
 
 	/**
 	 * @see Buyer#buyCosmetic()
 	 */
 	@Override
 	public void buyCosmetic() {
-		System.out.println("我想买一套SK2化妆品。");
+		System.out.println("我是Oubb，我想买一套SK2化妆品。");
 	}
-
 }
