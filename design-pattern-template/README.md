@@ -2,10 +2,11 @@
 
 ### 1.实现功能概要
 
-     根据需求出力相对应的EXCEL文件。
+   根据需求出力相对应的EXCEL文件。
 
 ### 2.代码解析
-   WorkbookTemplate类定义了出力的抽象方法，明细EXCEL文件的出力内容是在DetailWorkbook里面实现，统计EXCEL文件的处理内容是在TotlaWorkbook里面实现。
+  WorkbookTemplate类定义了出力的抽象方法，明细EXCEL文件的出力内容是在DetailWorkbook里面实现，
+    统计EXCEL文件的处理内容是在TotlaWorkbook里面实现。
  
 #### 2.1 父类共通方法和抽象方法
 ```
@@ -77,12 +78,12 @@
 ```
 #### 2.3 出力结果
 ###### 2.3.1 详细EXCEL文件
-![详细](detail.png)
+![详细](static/detail.png)
 
 ###### 2.3.2 汇总EXCEL文件
-![汇总](total.png)
+![汇总](static/total.png)
 
 ### 3. 类图
 
-![类图](class.png)
+![类图](static/class.png)
 

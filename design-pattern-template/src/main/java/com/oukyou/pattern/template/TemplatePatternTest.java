@@ -26,18 +26,18 @@ public final class TemplatePatternTest {
 	 */
 	public static void main(String[] args) throws Exception {
 		// 读取详细excel表的内容
-		InputStream detailStream = new FileInputStream("detail.xlsx");
+		InputStream detailStream = new FileInputStream("static/detail.xlsx");
 		XSSFWorkbook detailWb = new XSSFWorkbook(detailStream);
 
-		DetailWorkbook detail = new DetailWorkbook(detailWb, new FileOutputStream(new File("detail-output.xlsx")));
+		DetailWorkbook detail = new DetailWorkbook(detailWb, new FileOutputStream(new File("static/detail-output.xlsx")));
 		detail.write();
 		detailStream.close();
 
 		// 读取详细excel表的内容
-		InputStream totlaStream = new FileInputStream("total.xlsx");
+		InputStream totlaStream = new FileInputStream("static/total.xlsx");
 		XSSFWorkbook totalWb = new XSSFWorkbook(totlaStream);
 
-		TotalWorkbook total = new TotalWorkbook(totalWb, new FileOutputStream(new File("total-output.xlsx")));
+		TotalWorkbook total = new TotalWorkbook(totalWb, new FileOutputStream(new File("static/total-output.xlsx")));
 		total.write();
 		totlaStream.close();
 	}

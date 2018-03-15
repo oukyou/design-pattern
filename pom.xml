@@ -23,5 +23,7 @@
   	<module>design-pattern-proxy</module>
   	<module>design-pattern-strategy</module>
   	<module>design-pattern-template</module>
+  	<module>design-pattern-delegate</module>
+  	<module>design-pattern-adapter</module>
   </modules>
 </project>

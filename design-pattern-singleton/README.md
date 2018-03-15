@@ -2,6 +2,7 @@
 
 ### 1. 饿汉式
    在类加载时就完成了初始化，所以类加载较慢，但获取对象的速度快。
+
 ```
 /**
  * 饿汉式单例
@@ -29,7 +30,7 @@ public final class HungrySingleton {
 ```
 ### 2. 懒汉式
   类加载时不初始化，在初次调用是实例化。
-  在高并发情况下有线程安全问题，所以需要同步锁来保证唯一性。
+   在高并发情况下有线程安全问题，所以需要同步锁来保证唯一性。
 
 ##### 2.1 线程不安全
 ```
@@ -192,8 +193,8 @@ public final class RegisterSingleton {
 ```
 
 ### 6. 序列化以及反序列化
-  如果不实现readResolve方法，将对象单例类序列化之后修改其中的属性值再反序列化，
-  得到的结果的不同的实例。
+   如果不实现readResolve方法，将对象单例类序列化之后修改其中的属性值再反序列化，
+   得到的结果的不同的实例。
 ```
         public static void main(String[] args) {
 		HungrySingleton singleton = HungrySingleton.getInstance();
