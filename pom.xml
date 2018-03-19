@@ -25,5 +25,6 @@
   	<module>design-pattern-template</module>
   	<module>design-pattern-delegate</module>
   	<module>design-pattern-adapter</module>
+  	<module>design-pattern-decorator</module>
   </modules>
 </project>
